@@ -9,7 +9,8 @@
 <body>
   <header>
     <nav>
-      <ul class="navbar">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <ul class="navbar" id="menu">
         <li><a href="index.html">Etusivu</a></li>
         <li><a href="kaikki-pallot.html">Kaikki pallot</a></li>
         <li><a href="premium-pallot.html">Premium</a></li>
@@ -20,6 +21,14 @@
     <h1>Premium golfpallot</h1>
   </header>
 
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("active"); // Vaihdetaan luokka 'active'
+    }
+  </script>
+  
   <section class="products">
     <div class="product">
       <img src="images/golf-pallot.jpg" alt="Premium golfpallo">

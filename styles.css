@@ -158,3 +158,139 @@ body {
     background-color: #27ae60;
   }
   
+  nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  
+  nav li {
+    margin: 0 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+  
+  /* Mobiilinäkymä - pienemmille näytöille */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav li {
+      margin: 10px 0;
+    }
+  
+    nav a {
+      font-size: 16px;
+      padding: 10px;
+    }
+  }
+  
+  /* Hamburger-menu näkyy mobiilissa */
+  @media (max-width: 768px) {
+    nav ul {
+      display: none; /* Piilota valikko mobiilissa */
+      flex-direction: column;
+      width: 100%;
+      background-color: #333;
+    }
+  
+    nav ul.active {
+      display: flex;
+    }
+  
+    nav li {
+      text-align: center;
+      width: 100%;
+    }
+  
+    nav a {
+      padding: 10px 0;
+      border-top: 1px solid #444;
+    }
+  
+    .hamburger {
+      display: block;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+    }
+  }
+
+  /* Perusasetukset navigaatiolle */
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.navbar li {
+  margin: 0 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 10px 15px;
+}
+
+/* Mobiilinäkymä - piilotetaan navigaatio ja lisätään hamburger-valikko */
+@media (max-width: 768px) {
+  .navbar {
+    display: none; /* Piilotetaan alkuperäinen valikko mobiilissa */
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+  }
+
+  .navbar.active {
+    display: flex; /* Näytetään valikko, kun käyttäjä klikkaa hamburgeria */
+  }
+
+  .navbar li {
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar a {
+    padding: 10px 0;
+    border-top: 1px solid #444;
+  }
+
+  .hamburger {
+    display: block;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+  }
+}
+
+/* Vakiotyylit hamburger-ikonia varten */
+.hamburger {
+  display: none;
+}
+
+/* Varmistetaan, että hamburger on piilotettu suuremmilla näytöillä */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Näytetään hamburger vain mobiililaitteilla */
+    background-color: #333;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+  }
+}

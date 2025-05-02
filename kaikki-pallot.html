@@ -11,17 +11,25 @@
 <body>
   
     <header>
-        <nav>
-          <ul class="navbar">
-            <li><a href="index.html">Etusivu</a></li>
-            <li><a href="kaikki-pallot.html">Kaikki pallot</a></li>
-            <li><a href="premium-pallot.html">Premium</a></li>
-            <li><a href="halvat-pallot.html">Halvat</a></li>
-            <li><a href="yhteystiedot.html">Yhteystiedot</a></li>
-          </ul>
-        </nav>
+      <nav>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul class="navbar" id="menu">
+          <li><a href="index.html">Etusivu</a></li>
+          <li><a href="kaikki-pallot.html">Kaikki pallot</a></li>
+          <li><a href="premium-pallot.html">Premium</a></li>
+          <li><a href="halvat-pallot.html">Halvat</a></li>
+          <li><a href="yhteystiedot.html">Yhteystiedot</a></li>
+        </ul>
+      </nav>
         <h1>Kaikki pallot</h1>
       </header>
+
+      <script>
+        function toggleMenu() {
+          const menu = document.getElementById("menu");
+          menu.classList.toggle("active"); // Vaihdetaan luokka 'active'
+        }
+      </script>
 
   <section class="products">
     <div class="product">
