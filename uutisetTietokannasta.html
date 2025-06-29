@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kentällä – Etusivu</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <!-- Tällä linkataan scripts.js tiedoston sriptin tämän sivun käyttöön -->
+  <script src="scripts.js"></script> 
+
+  <header>
+    <nav>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+       <ul class="navbar" id="menu">
+        <li><a href="index.html">Etusivu</a></li>
+        <li><a href="lajilinkit.html">Lajien linkit</a></li>
+        <li><a href="uutisetTietokannasta.html" class="active"> Uutiset tietokannasta</a></li>
+        <li><a href="tietoameista.html">Tietoa meistä</a></li>
+      </ul>
+    </nav>
+    <h1>Kentällä.fi - Suomalaisen urheilun kotikenttä</h1>
+  </header>
+ <section class="intro">
+<h1>Uutiset tietokannasta</h1>
+  <ul id="uutislista"></ul>
+
+<!--Tämä lisätty Supabase toteutsta varten:-->
+<script>
+async function haeUutiset() {
+  try {
+    const response = await fetch('http://localhost:3000/uutiset'); // tuotannossa vaihda URL oikeaksi
+    const uutiset = await response.json();
+
+    const container = document.getElementById('uutislista');
+    container.innerHTML = '';
+
+    uutiset.forEach(u => {
+      const div = document.createElement('div');
+      div.className = 'uutinen';
+
+      div.innerHTML = `
+        <a href="${u.url}" target="_blank">${u.otsikko || '[Otsikko puuttuu]'}</a>
+        <div class="meta">${u.paivamaara} klo ${u.kellonaika} – ${u.lahde || ''}</div>
+      `;
+      container.appendChild(div);
+    });
+
+  } catch (e) {
+    document.getElementById('uutislista').innerText = 'Uutisten haku epäonnistui.';
+    console.error('Virhe uutisten haussa:', e);
+  }
+}
+
+// Kutsu funktiota, kun sivu latautuu
+haeUutiset();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Tämä osio oli alkuperäistä lokaalia varten:
+  <script>
+    fetch('http://localhost:3000/uutiset')
+      .then(response => response.json())
+      .then(data => {
+        const lista = document.getElementById('uutislista');
+        data.forEach(uutinen => {
+//Tässä muokataan tietokannassa näytettävä aika 2025-06-25 muotoon 25.6.2025 
+      const alkupera = new Date(uutinen.julkaisuaika);
+      const paiva = alkupera.getDate();
+      const kuukausi = alkupera.getMonth() + 1;
+      const vuosi = alkupera.getFullYear();
+      const tunnit = alkupera.getHours().toString().padStart(2, '0');
+      const minuutit = alkupera.getMinutes().toString().padStart(2, '0');
+      const muotoiltuAika = `${paiva}.${kuukausi}.${vuosi} klo ${tunnit}:${minuutit}`;
+
+          const li = document.createElement('li');
+          li.innerHTML = `<a href="${uutinen.url}" target="_blank">${uutinen.otsikko}</a> — ${muotoiltuAika}`;
+          lista.appendChild(li);
+        });
+      })
+      .catch(err => console.error('Virhe haettaessa uutisia:', err));
+  </script>
+
+-->
+
+  </section>

@@ -1,0 +1,66 @@
+29.5.2025 -- Tallentaan tämä V1 versio talteen ja jatkan V3 versiolla.
+
+saatu muokattua tätä projektia siten, että saatu taas tuloksia 
+http://localhost:3000/index.html
+
+Oleellisia ovat
+    tallennaUutiset.js
+    server.js
+    uutiset.db (tämä luodaan kun tallennaUutiset.js ajetaan)
+    package.json 
+    - Tämä on riippuvuuksia varten, tarvitaan aina
+    - nyt kaksi saman nimistä olemassa eri kansioissa, toinen tod.näk. turha
+    
+
+
+    Näissä on ne perustyylit ja nämä toimii sivuston runkona.
+    Sisältää mm. ylänavigaation 
+    index.html
+    lajilinkit.html
+    uutisetTietokannasta.html
+    tietoameista.html
+    styles.css 
+    scripts.js tämä ohjaa kai menua 
+
+    node tallennaUutiset.js
+        Tämä on se varsinainen moottori
+        Luo tietokannan
+            luo taulun
+        Hakee uutiset
+            Puppeterilla oikein sivustolta
+        Tallentaa uutiset 
+            Tietokantaan, osaa huomioida duplikaatit
+        Tulostaa consoleen poimitut uutiset
+
+    Toistaiseksi turhat:
+        Express.js - tämä oli uutisten ajastettua hakua varten, tyhjä vielä
+        Etsija.js - tämä oli lähteen hakemista varten, ei käytössä nyt
+
+
+    KYSYMYKSIÄ:
+        Miten saan lisättyä lähteen tietokantaan poimittavaan aineistoon? Sen voisi ottaa URLin alkuosasta
+        Miten saan ajastuksen toimimaan - express.js
+        Voinko lisätä toiselta sivulta lisää uutisia tonne samaan tauluun, nyt luodaan aina uusi tietokanta, jatkossa ei tarvitsisi
+
+
+
+
+
+29.6.2025
+    otettu pohjaksi V1 toimii ja luotu tämä V4
+
+Jos käytetään yhteisiä javascriptejä:
+    <!-- Tällä linkataan scripts.js tiedoston sriptin tämän sivun käyttöön -->
+  <script src="scripts.js"></script> 
+
+Jos käytetään yhteisiä tyylejä
+    <!-- Tällä linkataan styles.css tämän sivun käyttöön -->
+  <link rel="stylesheet" href="styles.css" />
+
+node server
+node tallennaUutiset.js --> Kun tämä laitetaan Terminaaliin niin se vie 
+
+
+
+        
+        

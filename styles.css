@@ -127,7 +127,7 @@ body {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    text-align: center;
+    text-align: left;
   }
 
   .category-links {
@@ -215,7 +215,7 @@ body {
     nav a {
       padding: 10px 0;
       border-top: 1px solid #444;
-    }
+       }
   
     .hamburger {
       display: block;
@@ -233,10 +233,13 @@ body {
   padding: 0;
   margin: 0;
   list-style-type: none;
+ 
+
 }
 
 .navbar li {
   margin: 0 20px;
+  
 }
 
 .navbar a {
@@ -244,7 +247,18 @@ body {
   color: white;
   font-size: 18px;
   padding: 10px 15px;
+    border-radius: 4px;
+
 }
+
+ /* Tämä on ylänavigaation valittuna olevan tyylit*/
+.navbar a.active {
+  color: #ffffff;
+  background-color: #444;
+  border-radius: 4px;
+ /* padding: 0.2rem;*/
+}
+
 
 /* Mobiilinäkymä - piilotetaan navigaatio ja lisätään hamburger-valikko */
 @media (max-width: 768px) {
@@ -293,4 +307,30 @@ body {
     padding: 10px;
     cursor: pointer;
   }
+}
+
+
+/* Muutetaan sivuilla näytettävien linkkien väriä, ettei ole perinteinen sininen -- Tämä vaikuttaa myös ylänaviin, joten pitää tutkia vielä*/
+a {
+ /* color: rgb(19, 11, 11);*/
+  /* text-decoration: none; poistaa alleviivauksen */
+  font-size:medium;
+}
+
+a:hover {
+  /*color: #555; /* väri kun linkkiä leijutetaan hiirellä */
+ /* text-decoration: underline;*/
+}
+
+@media (max-width: 768px) {
+a {
+  color: rgb(19, 11, 11);
+  /* text-decoration: none; poistaa alleviivauksen */
+  font-size:x-large;
+}
+
+a:hover {
+  color: #555; /* väri kun linkkiä leijutetaan hiirellä */
+ /* text-decoration: underline;*/
+}
 }
