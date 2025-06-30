@@ -61,6 +61,13 @@ node server
 node tallennaUutiset.js --> Kun tämä laitetaan Terminaaliin niin se vie 
 
 
+GitHub siirto masteriin, jos en tarvitse masteria enää main 
+
+git checkout main
+git branch -f master
+git checkout master
+git push origin master --force
+
 
         
         
